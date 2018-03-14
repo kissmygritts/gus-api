@@ -1,0 +1,3 @@
+SELECT *
+FROM species
+LIMIT 15;
