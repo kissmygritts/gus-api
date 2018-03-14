@@ -1,0 +1,9 @@
+type Query {
+  species: [Species]
+  description: String!
+}
+
+type Species {
+  common_name: String
+  species_name: String
+}
