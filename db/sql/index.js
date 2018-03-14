@@ -4,6 +4,12 @@ const path = require('path')
 module.exports = {
   species: {
     all: sql('species/all.sql')
+  },
+  activities: {
+    all: sql('activities/all.sql')
+  },
+  efforts: {
+    all: sql('efforts/all.sql')
   }
 }
 

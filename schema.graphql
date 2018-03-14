@@ -6,4 +6,5 @@ type Query {
 type Species {
   common_name: String
   species_name: String
+  grouping: String
 }

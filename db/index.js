@@ -4,6 +4,8 @@ const initOptions = {
   promiseLib: promise,
   extend (obj, dc) {
     obj.species = new repos.Species(obj, pgp)
+    obj.activities = new repos.Activities(obj, pgp)
+    obj.efforts = new repos.Efforts(obj, pgp)
   }
 }
 
