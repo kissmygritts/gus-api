@@ -9,7 +9,8 @@ module.exports = {
   },
   efforts: {
     all: sql('efforts/all.sql'),
-    findById: sql('efforts/findById.sql')
+    findById: sql('efforts/findById.sql'),
+    getEfforts: sql('efforts/getEfforts.sql')
   },
   species: {
     all: sql('species/all.sql')
