@@ -1,10 +1,33 @@
 type Query {
-  species: [Species]
+  activities: [Activity]
   description: String!
+  efforts: [Effort]
+  species: [Species]
 }
 
 type Species {
+  id: ID
   common_name: String
   species_name: String
   grouping: String
+}
+
+type Effort {
+  id: ID
+  effort_name: String
+  effort_primary_species: String
+  effort_status: String
+  effort_purpose: String
+  effort_agency: String
+}
+
+type Activity {
+  id: ID
+  effort_id: ID
+  activity_name: String
+  activity_type: String
+  activity_start_date: String
+  activity_duration: Int 
+  activity_time_frame: String
+  activity_description: String
 }
