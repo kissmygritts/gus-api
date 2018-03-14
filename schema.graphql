@@ -1,7 +1,9 @@
 type Query {
   activities: [Activity]
+  activityById(id: String): Activity
   description: String!
   efforts: [Effort]
+  effortsById(id: String): Effort
   species: [Species]
 }
 
@@ -19,6 +21,7 @@ type Effort {
   effort_status: String
   effort_purpose: String
   effort_agency: String
+  activities: [Activity]
 }
 
 type Activity {

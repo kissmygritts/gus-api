@@ -2,14 +2,17 @@ const QueryFile = require('pg-promise').QueryFile
 const path = require('path')
 
 module.exports = {
-  species: {
-    all: sql('species/all.sql')
-  },
   activities: {
-    all: sql('activities/all.sql')
+    all: sql('activities/all.sql'),
+    findById: sql('activities/findById.sql'),
+    getActivity: sql('activities/getActivity.sql')
   },
   efforts: {
-    all: sql('efforts/all.sql')
+    all: sql('efforts/all.sql'),
+    findById: sql('efforts/findById.sql')
+  },
+  species: {
+    all: sql('species/all.sql')
   }
 }
 

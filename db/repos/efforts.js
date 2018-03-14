@@ -11,6 +11,10 @@ class EffortsRepository {
   all () {
     return this.db.many(sql.all)
   }
+
+  findById (args) {
+    return this.db.oneOrNone(sql.findById, args)
+  }
 }
 
 module.exports = EffortsRepository
