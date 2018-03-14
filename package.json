@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "description": "An API layer for GUS",
   "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon index.js"
+  },
   "author": "Mitchell Gritts",
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.1",
     "express": "^4.16.3",
+    "lodash": "^4.17.5",
+    "npm": "^5.7.1",
     "pg-monitor": "^0.9.2",
     "pg-promise": "^8.2.2"
   },

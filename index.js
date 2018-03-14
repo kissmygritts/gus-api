@@ -1,5 +1,6 @@
 const db = require('./db')
 const express = require('express')
+const _ = require('lodash')
 const app = express()
 
 app.get('/', (req, res) => {
@@ -8,7 +9,10 @@ app.get('/', (req, res) => {
 
 app.get('/species', (req, res) => {
   db.species.all()
-    .then(data => res.status(200).json({ msg: 'success', data }))
+    .then(data => {
+      data = data.map(m => _.mapKeys(m, (v, k) => _.camelCase(k)))
+      res.status(200).json({ msg: 'success', data })
+    })
     .catch(error => res.status(400).json({ error }))
 })
 
