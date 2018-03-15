@@ -19,6 +19,10 @@ class ActivitiesRepository {
   getActivities (args) {
     return this.db.many(sql.getActivity, args)
   }
+
+  getActivityBatch (args) {
+    return this.db.many(sql.getActivityBatch, { id: args })
+  }
 }
 
 module.exports = ActivitiesRepository

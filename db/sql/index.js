@@ -5,7 +5,8 @@ module.exports = {
   activities: {
     all: sql('activities/all.sql'),
     findById: sql('activities/findById.sql'),
-    getActivity: sql('activities/getActivity.sql')
+    getActivity: sql('activities/getActivity.sql'),
+    getActivityBatch: sql('activities/getActivityBatch.sql')
   },
   efforts: {
     all: sql('efforts/all.sql'),
