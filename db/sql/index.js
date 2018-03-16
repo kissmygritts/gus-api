@@ -11,7 +11,8 @@ module.exports = {
   efforts: {
     all: sql('efforts/all.sql'),
     findById: sql('efforts/findById.sql'),
-    getEfforts: sql('efforts/getEfforts.sql')
+    getEfforts: sql('efforts/getEfforts.sql'),
+    getEffortBatch: sql('efforts/getEffortBatch.sql')
   },
   species: {
     all: sql('species/all.sql')

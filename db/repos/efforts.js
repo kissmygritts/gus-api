@@ -22,6 +22,10 @@ class EffortsRepository {
     return this.db.many(sql.getEfforts)
   }
 
+  getEffortBatch (args) {
+    return this.db.many(sql.getEffortBatch, { id: args })
+  }
+
   createEffort (args) {
     return this.db.one(this.pgp.helpers.insert(args, this.cs) + ' RETURNING *')
   }

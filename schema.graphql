@@ -54,4 +54,5 @@ type Activity {
   activity_time_frame: String
   activity_description: String
   created_at: String
+  effort: Effort
 }

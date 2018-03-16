@@ -8,6 +8,11 @@ const activityLoader = new DataLoader(keys => {
     .then(data => keys.map(k => data.filter(o => o.effort_id === k)))
 })
 
+const effortLoader = new DataLoader(keys => {
+  console.log(keys)
+  return db.efforts.getEffortBatch(keys)
+})
+
 const resolvers = {
   Query: {
     activities: () => db.activities.all(),
@@ -24,6 +29,9 @@ const resolvers = {
   },
   Effort: {
     activities: (effort) => activityLoader.load(effort.id)
+  },
+  Activity: {
+    effort: (activity) => effortLoader.load(activity.effort_id)
   }
 }
 
