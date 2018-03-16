@@ -17,6 +17,11 @@ const resolvers = {
     effortsById: (_, args) => db.efforts.findById(args),
     species: () => db.species.all()
   },
+  Mutation: {
+    createEffort: (parent, args) => db.efforts.createEffort(args),
+    updateEffort: (parent, args) => db.efforts.updateEffort(args),
+    deleteEffort: (parent, args) => db.efforts.deleteEffort(args)
+  },
   Effort: {
     activities: (effort) => activityLoader.load(effort.id)
   }

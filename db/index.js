@@ -21,4 +21,6 @@ const db = pgp(config)
 const diagnostics = require('./diagnostics')
 diagnostics.init(initOptions)
 
+// console.log(db)
+
 module.exports = db
