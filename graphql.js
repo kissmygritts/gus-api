@@ -20,6 +20,7 @@ const resolvers = {
     description: () => `This is the API for a simple blogging application`,
     efforts: () => db.efforts.all(),
     effortsById: (_, args) => db.efforts.findById(args),
+    events: () => db.events.all(),
     species: () => db.species.all()
   },
   Mutation: {

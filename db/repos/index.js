@@ -1,5 +1,6 @@
 module.exports = {
-  Species: require('./species'),
   Activities: require('./activities'),
-  Efforts: require('./efforts')
+  Efforts: require('./efforts'),
+  Events: require('./events'),
+  Species: require('./species')
 }

@@ -4,6 +4,7 @@ type Query {
   description: String!
   efforts: [Effort]
   effortsById(id: String): Effort
+  events: [Event]
   species: [Species]
 }
 
@@ -55,4 +56,16 @@ type Activity {
   activity_description: String
   created_at: String
   effort: Effort
+}
+
+type Event {
+  event_id: ID
+  activity_id: ID
+  event_date: String
+  event_type: String
+  event_method: String
+  x: Float
+  y: Float
+  datum: String
+  comments: String
 }

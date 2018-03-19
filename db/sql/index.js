@@ -14,6 +14,9 @@ module.exports = {
     getEfforts: sql('efforts/getEfforts.sql'),
     getEffortBatch: sql('efforts/getEffortBatch.sql')
   },
+  events: {
+    all: sql('events/all.sql')
+  },
   species: {
     all: sql('species/all.sql')
   }
