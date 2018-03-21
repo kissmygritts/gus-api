@@ -8,8 +8,8 @@ class ActivitiesRepository {
     // createColumnsets(pgp)
   }
 
-  all () {
-    return this.db.many(sql.all)
+  all (where) {
+    return this.db.many(sql.all, where)
   }
 
   findById (args) {

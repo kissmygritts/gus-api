@@ -1,5 +1,5 @@
 const loaders = require('../controllers/loaders')
-const db = require('../db')
+const db = require('../../db')
 
 module.exports = {
   Query: {
