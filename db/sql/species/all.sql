@@ -1,7 +1,3 @@
-SELECT 
-  id,
-  common_name, 
-  species_name,
-  grouping
+SELECT *
 FROM species
 LIMIT 15;

@@ -1,3 +1,7 @@
+scalar DateTime
+scalar Time
+scalar Date
+
 type Query {
   activities: [Activity]
   activityById(id: String): Activity
@@ -41,7 +45,7 @@ type Effort {
   effort_status: String
   effort_purpose: String
   effort_agency: String
-  created_at: String
+  created_at: DateTime
   activities: [Activity]
 }
 
@@ -50,18 +54,18 @@ type Activity {
   effort_id: ID
   activity_name: String
   activity_type: String
-  activity_start_date: String
+  activity_start_date: Date
   activity_duration: Int 
   activity_time_frame: String
   activity_description: String
-  created_at: String
+  created_at: DateTime
   effort: Effort
 }
 
 type Event {
   event_id: ID
   activity_id: ID
-  event_date: String
+  event_date: Date
   event_type: String
   event_method: String
   x: Float

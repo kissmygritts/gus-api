@@ -1,0 +1,34 @@
+type Effort {
+  id: ID
+  effort_name: String
+  effort_primary_species: String
+  effort_status: String
+  effort_purpose: String
+  effort_agency: String
+  created_at: DateTime
+  activities: [Activity]
+}
+
+type Query {
+  efforts: [Effort]
+  effort(id: ID!): Effort
+}
+
+type Mutation {
+  createEffort(
+    effort_name: String!,
+    effort_primary_species: String,
+    effort_status: String!,
+    effort_purpose: String,
+    effort_agency: String
+  ): Effort
+  updateEffort(
+    id: ID!
+    effort_name: String!,
+    effort_primary_species: String,
+    effort_status: String!,
+    effort_purpose: String,
+    effort_agency: String
+  ): Effort
+  deleteEffort(id: ID!): Effort
+}

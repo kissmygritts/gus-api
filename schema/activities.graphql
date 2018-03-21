@@ -1,0 +1,17 @@
+type Activity {
+  id: ID
+  effort_id: ID
+  activity_name: String
+  activity_type: String
+  activity_start_date: Date
+  activity_duration: Int 
+  activity_time_frame: String
+  activity_description: String
+  created_at: DateTime
+  effort: Effort
+}
+
+type Query {
+  activities: [Activity]
+  activity(id: ID!): Activity
+}

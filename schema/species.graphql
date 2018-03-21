@@ -1,0 +1,21 @@
+type Species {
+  id: ID!
+  common_name: String!
+  species_name: String!
+  alpha_code: String
+  genus: String
+  species: String
+  gbif_key: Int
+  t_phylum: String
+  t_class: String
+  t_order: String
+  t_family: String
+  grouping: String
+  ndow_code: Int
+  created_at: DateTime
+  updated_at: DateTime
+}
+
+type Query {
+  species: [Species]
+}

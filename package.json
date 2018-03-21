@@ -12,8 +12,10 @@
     "bluebird": "^3.5.1",
     "dataloader": "^1.4.0",
     "express": "^4.16.3",
+    "graphql-iso-date": "^3.5.0",
     "graphql-yoga": "^1.5.2",
     "lodash": "^4.17.5",
+    "merge-graphql-schemas": "^1.5.1",
     "npm": "^5.7.1",
     "pg-monitor": "^0.9.2",
     "pg-promise": "^8.2.2"
