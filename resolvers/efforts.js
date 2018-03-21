@@ -1,10 +1,5 @@
-const DataLoader = require('dataloader')
+const { activityLoader } = require('../controllers/loaders')
 const db = require('../db')
-
-const activityLoader = new DataLoader(keys => {
-  return db.activities.getActivityBatch(keys)
-    .then(data => keys.map(k => data.filter(o => o.effort_id === k)))
-})
 
 module.exports = {
   Query: {
@@ -19,6 +14,6 @@ module.exports = {
   },
 
   Effort: {
-    activities: (effort) => activityLoader.load(effort.id)
+    activities: effort => activityLoader.load(effort.id)
   }
 }
