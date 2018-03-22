@@ -17,5 +17,5 @@ type Species {
 }
 
 type Query {
-  species: [Species]
+  species(common_name: String): [Species]
 }
