@@ -1,3 +1,5 @@
+const pgp = require('pg-promise')()
+
 const repoFactory = function ({ rep, pgp, fields, tbl }) {
   const cs = new pgp.helpers.ColumnSet(fields, pgp.helpers.TableName(tbl))
 
@@ -12,7 +14,7 @@ const repoAddUtils = function (repo) {
   return {
     ...repo,
     select: () =>
-      repo.pgp.as.format('SELECT $/columns:raw/ FROM $/table/ LIMIT 10', {
+      repo.pgp.as.format('SELECT $/columns:raw/ FROM $/table/', {
         columns: repo.cs.names,
         table: repo.cs.table
       }),
@@ -23,7 +25,14 @@ const repoAddUtils = function (repo) {
   }
 }
 
+const predicate = function (args) {
+  return Object.keys(args)
+    .map(m => pgp.as.format('$/this:name/ = $/this:csv/', { [m]: args[m] }))
+    .reduce((acc, curr) => acc + ' AND ' + curr)
+}
+
 module.exports = {
   repoFactory,
-  repoAddUtils
+  repoAddUtils,
+  predicate
 }

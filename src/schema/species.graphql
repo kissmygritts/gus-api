@@ -1,5 +1,6 @@
 type Species {
   id: ID!
+  # The common, colloquial name of the species.
   common_name: String!
   species_name: String!
   alpha_code: String
@@ -17,5 +18,12 @@ type Species {
 }
 
 type Query {
-  species(common_name: String): [Species]
+  species(
+    common_name: String,
+    grouping: String,
+    genus: String,
+    species: String,
+    limit: Int,
+    offset: Int
+  ): [Species]
 }
