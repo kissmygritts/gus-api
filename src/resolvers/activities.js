@@ -9,5 +9,11 @@ module.exports = {
 
   Activity: {
     effort: activity => loaders.effortLoader.load(activity.effort_id)
+  },
+
+  Mutation: {
+    createActivity: (parent, args) => db.activities.createActivity(args),
+    updateActivity: (parent, args) => db.activities.updateActivity(args),
+    deleteActivity: (parent, args) => db.activities.deleteActivity(args)
   }
 }

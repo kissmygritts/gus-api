@@ -2,12 +2,13 @@ const DataLoader = require('dataloader')
 const db = require('../../db')
 
 const activityLoader = new DataLoader(keys => {
-  const where = db.activities.pgp.as.format(
-    ' where effort_id in ($/keys:csv/)',
-    { keys }
-  )
-
-  return db.activities.all(where)
+  console.log(keys)
+  // const where = db.activities.pgp.as.format(
+  //   ' where effort_id in ($/keys:csv/)',
+  //   { keys }
+  // )
+  // I should dynamically format the SQL here instead
+  return db.activities.getActivityBatch({ id: keys })
     .then(data => keys.map(k => data.filter(o => o.effort_id === k)))
 })
 

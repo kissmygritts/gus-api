@@ -1,3 +1,3 @@
 SELECT *
 FROM activities
-$1:raw
+-- $1:raw
