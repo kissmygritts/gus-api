@@ -30,6 +30,12 @@ class EffortsRepository {
     return this.db.one(this.pgp.helpers.insert(args, this.cs) + ' RETURNING *')
   }
 
+  batchCreateEffort (args) {
+    const sql = this.pgp.helpers.insert(args, this.cs) + ' RETURNING *'
+    // console.log(sql)
+    return this.db.many(sql)
+  }
+
   updateEffort (args) {
     return this.db.one(this.pgp.helpers.update(args, this.cs) + ` WHERE id = '${args.id}' RETURNING *`)
   }

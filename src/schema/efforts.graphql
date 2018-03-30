@@ -14,14 +14,19 @@ type Query {
   effort(id: ID!): Effort
 }
 
+input EffortInput {
+  effort_name: String!,
+  effort_primary_species: String,
+  effort_status: String,
+  effort_purpose: String,
+  effort_agency: String
+}
+
 type Mutation {
-  createEffort(
-    effort_name: String!,
-    effort_primary_species: String,
-    effort_status: String!,
-    effort_purpose: String,
-    effort_agency: String
-  ): Effort
+  createEffort(input: EffortInput): Effort
+
+  batchCreateEffort(input: [EffortInput]): [Effort]
+
   updateEffort(
     id: ID!
     effort_name: String!,
@@ -30,5 +35,6 @@ type Mutation {
     effort_purpose: String,
     effort_agency: String
   ): Effort
+  
   deleteEffort(id: ID!): Effort
 }

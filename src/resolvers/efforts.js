@@ -8,7 +8,8 @@ module.exports = {
   },
 
   Mutation: {
-    createEffort: (parent, args) => db.efforts.createEffort(args),
+    createEffort: (parent, { input }) => db.efforts.createEffort(input),
+    batchCreateEffort: (parent, { input }) => db.efforts.batchCreateEffort(input),
     updateEffort: (parent, args) => db.efforts.updateEffort(args),
     deleteEffort: (parent, args) => db.efforts.deleteEffort(args)
   },
